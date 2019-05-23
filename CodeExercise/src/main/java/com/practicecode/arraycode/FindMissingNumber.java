@@ -25,7 +25,7 @@ public class FindMissingNumber {
 		if (findFirstMissingNumber(array) ==0) {
 			System.out.println("All Numbers are present");
 		} else {
-			System.out.println("Missing Number: "+findFirstMissingNumber(array));
+			System.out.println("First Missing Number: "+findFirstMissingNumber(array));
 		}
 		
 	}
