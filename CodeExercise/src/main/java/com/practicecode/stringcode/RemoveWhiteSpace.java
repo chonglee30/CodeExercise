@@ -21,5 +21,5 @@ public class RemoveWhiteSpace {
 		RemoveWhiteSpace removeWhiteSpace = new RemoveWhiteSpace();
 		System.out.println(removeWhiteSpace.removeWhiteSpace(str));
 	}
-
+ 
 }

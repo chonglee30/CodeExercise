@@ -17,7 +17,7 @@ public class RemoveNumbers {
 	
 	private boolean isOddNumber(int number) {
 		if ((number%2) != 0) {
-			return true;
+			return true; 
 		} 
 		return false;
 	}

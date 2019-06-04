@@ -9,7 +9,7 @@ public class FindEvenOrOddNumber {
 			System.out.println(number+" is Odd Number.");
 		}
 	}
-		
+		 
 	public void findEvenOddNumberByQuotient(int number) {
 		int quotient = number/2;
 		
