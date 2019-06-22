@@ -2,6 +2,7 @@ package com.practicecode.arraycode;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -67,15 +68,27 @@ public class SumOfTwoValues {
 		}
 	}
 	
+	public void printTargetSum() {
+		Scanner in = new Scanner(System.in);
+		Integer targetSum = in.nextInt();
+		
+		Integer totalArrayNum = in.nextInt();
+		int [] array = new int[totalArrayNum];
+		for (int i=0; i<totalArrayNum; i++) {
+			array[i]= in.nextInt();
+		}
+		
+		twoSumValues(array, targetSum);
+		twoSumSortedArrayValues(array,targetSum);
+		twoSumUsingHashSet(array, targetSum);
+	}
 	
 	public static void main(String[] args) {
 		int targetSum = 9;
 		int [] array = {5,7,1,2,8,4,3};
 		
 		SumOfTwoValues twoValuesSum = new SumOfTwoValues();
-		twoValuesSum.twoSumValues(array, targetSum);
-		twoValuesSum.twoSumSortedArrayValues(array,targetSum);
-		twoValuesSum.twoSumUsingHashSet(array, targetSum);
+		twoValuesSum.printTargetSum();
 	}
 
 }

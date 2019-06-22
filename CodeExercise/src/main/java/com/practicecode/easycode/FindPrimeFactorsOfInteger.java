@@ -68,8 +68,6 @@ public class FindPrimeFactorsOfInteger {
 		}
 	}
 
-	
-	
 	public static void main(String[] args) {
 		FindPrimeFactorsOfInteger primeFactor = new FindPrimeFactorsOfInteger();
 		primeFactor.primeFactorialNumber(45);

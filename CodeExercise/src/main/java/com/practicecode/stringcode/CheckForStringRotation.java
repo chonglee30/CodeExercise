@@ -1,8 +1,11 @@
 package com.practicecode.stringcode;
 
+import java.util.Scanner;
+
 public class CheckForStringRotation {
 
-	public boolean isStringRotatedOtherByConcatenation(String s1, String s2) {
+	// Solution#1:
+	private boolean isStringRotatedOtherByConcatenation(String s1, String s2) {
 		boolean rotated=false;
 		
 		if (s1==null || s2==null) {
@@ -24,18 +27,26 @@ public class CheckForStringRotation {
 		return rotated;
 	}
 	
-	public static void main(String[] args) {
+	// Evaluate: Calling Solution#1
+	public void evaluateStringRotation() {
+		Scanner in = new Scanner(System.in);
+	    Integer totalInput = in.nextInt();
 		
-		String s1="abcd";
-		String s2="bcda";
-		
+	    for (int i=0; i<totalInput; i++) {
+	        String firstValue = in.next();
+	        String secondValue = in.next();
+	        
+	        if (isStringRotatedOtherByConcatenation(firstValue, secondValue)) {
+				System.out.println("Rotated");
+			} else {
+				System.out.println("Not Rotated");
+			}    
+	     }        
+	}
+	
+	public static void main(String[] args) {		
 		CheckForStringRotation strRotation = new CheckForStringRotation();
-		if (strRotation.isStringRotatedOtherByConcatenation(s1, s2)) {
-			System.out.println("Rotated");
-		} else {
-			System.out.println("Not Rotated");
-		}
-
+		strRotation.evaluateStringRotation();
 	}
 
 }

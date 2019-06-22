@@ -5,4 +5,18 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Code Exercise</name>
   <description>Code Exercise (Programming): Algorithm, Data Structure, Dynamic Programming, etc.</description>
+
+<properties>
+        <testng.version>6.14.3</testng.version>
+</properties>
+
+<dependencies>  		
+	<dependency>
+    	<groupId>org.testng</groupId>
+    	<artifactId>testng</artifactId>
+    	<version>${testng.version}</version>
+    	<scope>test</scope>
+	</dependency>
+</dependencies>	
 </project>
+

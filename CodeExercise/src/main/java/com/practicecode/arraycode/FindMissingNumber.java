@@ -1,24 +1,12 @@
 package com.practicecode.arraycode;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class FindMissingNumber {
-	
-	public static Integer findMissingNumberLinear(int [] array) {
-		int size = array.length;
-		Arrays.sort(array);
-		Integer missingNum=null;
-		 
-		for (int i=0; i<size; i++) {
-			if (array[i] != (i)) {
-				missingNum = (i);
-				return missingNum;
-			}
-		}
-		return missingNum;
-	}
-	
+
 	// Try Later:
+	// Solution2: Binary Search
 	/*public static int findMissingNumberBinary(int [] array) {
 
 		int size = array.length;
@@ -30,19 +18,49 @@ public class FindMissingNumber {
 		int mid =0;
 		
 		while (initialNum < lastNum) {
-			mid = (initialNum + lastNum)/2;
-			
+			mid = (initialNum + lastNum)/2;	
 			if (array)
-		}
-		
-		
+		}	
 	} */
+	
+	// Solution1: Linear
+	public Integer findMissingNumberLinear(int [] array) {
+		int size = array.length;
+		Arrays.sort(array);
+		Integer missingNum=null;
+		 
+		for (int i=1; i<=size; i++) {
+			if (array[i-1] != (i)) {
+				missingNum = (i);
+				return missingNum;
+			}
+		}
+		return missingNum;
+	}
+	
+	// Print Missing Number:
+	public void printMissingNumbers() {
+		Scanner in = new Scanner(System.in);
+		
+		int length = in.nextInt();
+		int []array = new int[length];
+		
+	    for (int i=0; i<length; i++) {
+	           array[i] = in.nextInt();
+	    }
 
+	    if (findMissingNumberLinear(array)==null) {
+			System.out.println("No Missing Number");
+		} else {
+			System.out.println("First Missing Number: "+findMissingNumberLinear(array));
+		}
+	    
+	    in.close();
+	}
 
 	public static void main(String[] args) {
-		int array[] = {1,2,3,4,5,6,7,8,9,10};
-		System.out.println("First Missing Number: "+findMissingNumberLinear(array));
-		
+		FindMissingNumber findMissingNum = new FindMissingNumber();
+		findMissingNum.printMissingNumbers();
 	}
 
 }

@@ -2,6 +2,7 @@ package com.practicecode.stringcode;
 
 import java.util.Stack;
 import java.util.EmptyStackException;
+import java.util.Scanner;
 
 public class CheckForBalancedParentheses {
 
@@ -27,18 +28,25 @@ public class CheckForBalancedParentheses {
 		return (stack.size()==0);
 	}
 	 
+	public void evaluateBalancedParentheses() {
+		Scanner in = new Scanner(System.in);
+	    Integer totalInput = in.nextInt();
+		
+	    for (int i=0; i<totalInput; i++) {
+	        String inputValues = in.next();
+	    
+	  		if (isBalancedParentheses(inputValues)) {
+				System.out.println("Balanced parentheses");
+			} else {
+				System.out.println("Inbalanced (invalid) parentheses");
+			}
+	          
+	     }        
+	}
+	
 	public static void main(String[] args) {
 		CheckForBalancedParentheses balancedParentheses = new CheckForBalancedParentheses();
-		if (balancedParentheses.isBalancedParentheses("(())")) {
-			System.out.println("Balanced");
-		}
-		
-		if (balancedParentheses.isBalancedParentheses("((())))")) {
-			System.out.println("Balanced parentheses");
-		} else {
-			System.out.println("Inbalanced (invalid) parentheses");
-		}
-
+		balancedParentheses.evaluateBalancedParentheses();
 	}
 
 }

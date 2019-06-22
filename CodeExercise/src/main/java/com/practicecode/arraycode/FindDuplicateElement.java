@@ -26,9 +26,7 @@ public class FindDuplicateElement {
 	}
 	
 	public static void main(String[] args) {
-		
 		String str ="baseball";
-		
 		FindDuplicateElement duplicateElement = new FindDuplicateElement();
 		System.out.println("Duplicate Characters: "+Arrays.toString(duplicateElement.findDuplicateCharsBySet(str).toArray()));
 	}

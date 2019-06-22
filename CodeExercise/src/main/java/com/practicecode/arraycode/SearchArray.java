@@ -27,7 +27,6 @@ public class SearchArray {
 		}	
 	}
 
-	
 	public static void main(String[] args) {
 		int []arr = {5,12,17,23,38,44,77,84,90};
 		Arrays.sort(arr);
