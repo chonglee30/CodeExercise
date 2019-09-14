@@ -3,7 +3,7 @@ package com.practicecode.arraycode;
 import java.util.Arrays;
 
 public class RotateArray {
-
+	
 	public int[] rotateLeft(int [] arr, int rotateNumber) {
 		int arrLength = arr.length;
 		for (int i=0; i<rotateNumber; i++) {

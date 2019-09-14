@@ -3,11 +3,23 @@ package com.practicecode.easycode;
 import java.util.Scanner;
 
 // Input:
-
-
-
 public class FindFIzzBuzz {
 
+
+	// Input 1 and 100
+	public static void printFizzBuzz() {
+		for (int i=1; i<100; i++) {	
+			if ((i%3) ==0) {
+				System.out.println("Fizz");
+			} else if ((i%5)==0) {
+				System.out.println("Buzz");
+			} else if (((i%3) ==0) && ((i%5)==0)) {
+				System.out.println("Fizz Buzz");
+			}
+		}
+	}
+	
+	
 	public static void printFizzBuzzFromUserInput() {
         Scanner in = new Scanner(System.in);
         Integer totInput = in.nextInt();
@@ -59,7 +71,8 @@ public class FindFIzzBuzz {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//printFizzBuzzFromUserInput();
-		printFizzBuzzWhile();
+		printFizzBuzz();
+		//printFizzBuzzWhile();
 	}
 
 }

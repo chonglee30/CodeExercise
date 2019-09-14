@@ -55,7 +55,7 @@ public class CheckForAnagram {
 		Assert.assertTrue(checkAnagramClassic(sourceStr, destinationStr), "Not Anagram");
 	}
 	
-	@Test
+	@Test(groups="Easy")
 	public void testAnagramVer2() {
 		String sourceStr = "mary";
 		String destinationStr = "army";

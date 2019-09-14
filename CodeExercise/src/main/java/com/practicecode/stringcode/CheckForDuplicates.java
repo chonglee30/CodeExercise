@@ -145,7 +145,7 @@ public class CheckForDuplicates {
 	}
 	
 	// Problem#1:
-	@Test
+	@Test(groups="Easy")
 	public void testDuplicates() {
 		String str = "programming";
 		char occurrence ='m';
@@ -154,7 +154,7 @@ public class CheckForDuplicates {
 	}
 	
 	// Problem#2:
-	@Test
+	@Test(groups="Easy")
 	public void testRemoveDuplicates() {
 		String str = "programming";
 		String removedStr = removeDuplicateChar(str);
