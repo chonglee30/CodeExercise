@@ -8,9 +8,14 @@ package com.practicecode.linkedlistcode;
  * Reference Site: https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/
  * 
  * B. Node Deletion:
- * 
  * Reference Site: https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/
  * https://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/
+ * 
+ * C. Node Length:
+ * Reference Site: https://javarevisited.blogspot.com/2016/05/how-do-you-find-length-of-singly-linked.html
+ * 
+ * D. Find:
+ *    a. Find the middle of linked list:
  */
 
 public class LinkedListTest {
@@ -21,6 +26,10 @@ public class LinkedListTest {
 		list.appendNodeEnd("Chicago");
 		list.insertAfterGivenNode(list.getHeadNode().getNextNode(), "Houston");
 		list.appendNodeEnd("Atlanta");
+		
+		list.appendNodeEnd("Miami");
+		list.appendNodeEnd("Seattle");
+		list.appendNodeEnd("Portland");
 	}
 		
 	public void printAllNodes(LinkedList list) {
@@ -32,10 +41,20 @@ public class LinkedListTest {
 		LinkedList list = new LinkedList();
 		listInsertion.addNodes(list);
 		listInsertion.printAllNodes(list);
-		list.deleteNode(list.getHeadNode().getNextNode().getNextNode());
-		listInsertion.printAllNodes(list);
-		list.deleteAtPosition(2);
-		listInsertion.printAllNodes(list);
+				
+		//list.deleteNode(list.getHeadNode().getNextNode().getNextNode());
+		//listInsertion.printAllNodes(list);
+		
+		/*list.deleteAtPosition(2);
+		listInsertion.printAllNodes(list); */
+		
+		String midData = list.findMiddleNode();
+		System.out.println("Mid Data: "+midData);
+		
+		String thirdData = list.findThirdLast();
+		if (thirdData == null) System.out.println("No 3rd Data from the last");
+		System.out.println("3rd last Data: "+thirdData);
+
 	}
 }
 
@@ -57,8 +76,7 @@ class LinkedList {
 			System.out.print(currNode.data+" ");
 			currNode = currNode.next;
 		} while (currNode != null); 
-		System.out.println("");
-		
+		System.out.println("");		
 	}
 	
 	// 1. Insertion:
@@ -133,6 +151,65 @@ class LinkedList {
 		prevNode.next = currNode.next;
 		currNode.next = null;
 	}
+	
+	// 3. Length of LinkedList
+	// 1) No Recursion:
+	public int lengthLinkedList() {
+		Node currNode = head;
+		int totalLength =0;
+		
+		while (currNode!=null) {
+			currNode = currNode.next;
+			totalLength++;
+		}
+		
+		return totalLength;
+	}
+	
+	// 4. Find:
+	// 1) Find the middle node of linkedList by one pass
+	public String findMiddleNode() {
+		
+		Node current = head;
+		Node middle = head.next;
+		System.out.println("Initial Middle:"+middle.data);
+		
+		while (middle.next!=null) {
+			current = current.next;
+			if (middle.next.next==null) {
+				break;
+			}
+			//System.out.println("Current:"+current.data);
+			//System.out.println("Consequence:"+middle.data);
+			middle = middle.next.next;
+		}
+		
+		return current.data;
+	}
+	
+	// 2) Find the 3rd element from the last
+	public String findThirdLast() {
+		
+		Node current = head;
+		String thirdData=null;
+		
+		while (current!=null) {
+			
+			if (current.next ==null ||
+				current.next.next == null) {
+				break;
+			}
+			
+			if (current.next.next.next ==null) {
+				thirdData = current.data;
+				break;
+			}
+			
+			current = current.next;
+		}
+		return thirdData;
+	}
+	
 	
 	public class Node {
 		private Node next;
